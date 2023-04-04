@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Quest Tracker - Log In</title>
+  </head>
+  <body>
+    <header>
+      <h1>Quest Tracker</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="quests.html">Quests</a></li>
+          <li><a href="signup.html">Sign Up</a></li>
+          <li><a href="login.html">Log In</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main>
+      <section>
+        <h2>Log In</h2>
+        <form>
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required>
+          <br>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+          <br>
+          <button type="submit">Log In</button>
+        </form>
+      </section>
+      
+      <section id="tokens">
+        <h2>Tokens Earned</h2>
+        <p>You have earned 0 tokens.</p>
+      </section>
+    </main>
+    
+    <footer>
+      <p>&copy; 2023 Quest Tracker</p>
+    </footer>
+    
+    <script>
+      const form = document.querySelector('form');
+      const tokensSection = document.querySelector('#tokens');
+      
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        
+        const username = event.target.elements.username.value;
+        const password = event.target.elements.password.value;
+        
+        // make an API call to the server to log in the user
+        const response = await fetch('/api/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ username, password })
+        });
+        
+        if (response.ok) {
+          // if the login was successful, display the user's token count
+          const data = await response.json();
+          const tokens = data.tokens;
+          
+          tokensSection.innerHTML = `
+            <h2>Tokens Earned</h2>
+            <p>You have earned ${tokens} tokens.</p>
+          `;
+        } else {
+          // if the login failed, display an error message
+          tokensSection.innerHTML = `
+            <h2>Tokens Earned</h2>
+            <p>Login failed. Please check your username and password and try again.</p>
+          `;
+        }
+      });
+    </script>
+  </body>
+</html>
