@@ -1,43 +1,48 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Token Tracker</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-	<header>
-		<h1>Token Tracker</h1>
-	</header>
-	
-	<nav>
-		<ul>
-			<li><a href="#">Home</a></li>
-			<li><a href="#">Account</a></li>
-			<li><a href="#">About Us</a></li>
-		</ul>
-	</nav>
-	
-	<main>
-		<h2>Create an Account</h2>
-		<form action="submit.php" method="post">
-			<label for="username">Username:</label>
-			<input type="text" id="username" name="username" required>
-			<br>
-			<label for="password">Password:</label>
-			<input type="password" id="password" name="password" required>
-			<br>
-			<label for="confirm_password">Confirm Password:</label>
-			<input type="password" id="confirm_password" name="confirm_password" required>
-			<br>
-			<input type="submit" value="Create Account">
-		</form>
-	</main>
-	
-	<footer>
-		<p>&copy; Token Tracker 2023</p>
-	</footer>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <title>Quest Tracker</title>
+  </head>
+  <body>
+    <header>
+      <h1>Quest Tracker</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Quests</a></li>
+          <li><a href="#">Sign Up</a></li>
+          <li><a href="#">Log In</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main>
+      <section>
+        <h2>Available Quests</h2>
+        <ul>
+          <li>Quest 1</li>
+          <li>Quest 2</li>
+          <li>Quest 3</li>
+          <!-- add more quests as necessary -->
+        </ul>
+      </section>
+      
+      <section>
+        <h2>Token Tracker</h2>
+        <p>Track how many tokens you've earned in the real world.</p>
+        <form>
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username"><br><br>
+          <label for="tokens">Tokens:</label>
+          <input type="number" id="tokens" name="tokens" min="0"><br><br>
+          <input type="submit" value="Submit">
+        </form>
+      </section>
+    </main>
+    
+    <footer>
+      <p>&copy; 2023 Quest Tracker</p>
+    </footer>
+  </body>
 </html>
-
