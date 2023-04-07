@@ -65,7 +65,7 @@ footer {
 
 /* Page-Specific Styles */
 .home {
-  background-image: url('your-background-image.jpg');
+  background-image: url('background.jpg');
   background-size: cover;
   background-position: center;
   color: #fff;
