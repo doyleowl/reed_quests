@@ -12,7 +12,7 @@ body {
   background-position: center;
   font-family: Arial, sans-serif;
   font-size: 16px;
-  color: #333;
+  color: yellow; /* Change text color to yellow */
 }
 
 /* Header styles */
@@ -39,7 +39,7 @@ nav li {
 
 nav a {
   text-decoration: none;
-  color: #fff200;
+  color: #fff;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -59,6 +59,7 @@ main {
 h1, h2, h3 {
   font-weight: bold;
   margin-bottom: 20px;
+  color: yellow; /* Change heading color to yellow */
 }
 
 /* Paragraph styles */
